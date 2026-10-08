@@ -1,7 +1,7 @@
 ﻿
-using Restaurant.Data;
+using Basmoti_Restaurant.Data;
 
-namespace Restaurant.Models.Repositories
+namespace Basmoti_Restaurant.Models.Repositories
 {
     public class dbMasterPartnerRepository : IRepository<MasterPartner>
     {
@@ -59,7 +59,7 @@ namespace Restaurant.Models.Repositories
 
             entity.UpdateDate = DateTime.Now;
             entity.UpdateId = "1";
-            db.MasterPartners.Update(entity);
+
             db.SaveChanges();
         }
 

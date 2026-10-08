@@ -1,5 +1,5 @@
-﻿using Restaurant.Data;
-namespace Restaurant.Models.Repositories
+﻿using Basmoti_Restaurant.Data;
+namespace Basmoti_Restaurant.Models.Repositories
 {
     public class dbTransactionNewsletterRepository : ITransactionRepository<TransactionNewsletter>
     {

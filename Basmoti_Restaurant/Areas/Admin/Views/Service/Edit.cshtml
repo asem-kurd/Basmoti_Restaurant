@@ -1,0 +1,42 @@
+﻿@using Basmoti_Restaurant.Areas.Admin.ViewModels
+@model MasterServiceModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>MasterService</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="MasterServicesId" type="hidden" />
+            <div class="form-group">
+                <label asp-for="MasterServicesTitle" class="control-label"></label>
+                <input asp-for="MasterServicesTitle" class="form-control" />
+                <span asp-validation-for="MasterServicesTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MasterServicesDesc" class="control-label"></label>
+                <input asp-for="MasterServicesDesc" class="form-control" />
+                <span asp-validation-for="MasterServicesDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="MasterServicesImage" type="hidden" />
+                <label asp-for="File" class="control-label"></label>
+                <input asp-for="File" class="form-control" />
+                <span asp-validation-for="File" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

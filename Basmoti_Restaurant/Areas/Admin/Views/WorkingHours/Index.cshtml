@@ -1,0 +1,125 @@
+﻿@model IEnumerable<Basmoti_Restaurant.Models.MasterWorkingHours>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MasterWorkingHoursDayName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MasterWorkingHoursIsClosed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MasterWorkingHoursOpenTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MasterWorkingHoursCloseTime)
+            </th>
+            
+            <th>Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MasterWorkingHoursDayName)
+            </td>
+            <td>
+                    @if (item.MasterWorkingHoursIsClosed == true)
+                    {
+                        <p>Yes</p>    
+                    }
+                    else
+                    {
+                        <p>No</p>
+                    }
+                    @* @Html.DisplayFor(modelItem => item.MasterWorkingHoursIsClosed) *@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MasterWorkingHoursOpenTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MasterWorkingHoursCloseTime)
+            </td>
+            
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.MasterWorkingHoursId"> <b> <i class="bi bi-pencil-square text-info fs-4"></i> </b> </a> |
+                    <a asp-action="Index" asp-route-toggleId="@item.MasterWorkingHoursId">
+                        @if (item.IsActive)
+                        {
+                            <i class="bi bi-eye text-success fs-4"></i>
+                        }
+                        else
+                        {
+                            <i class="bi bi-eye-slash text-secondary fs-4"></i>
+                        }
+                    </a>
+                    |
+
+                    <a class="csDelete" href="#" data-urls="@Url.Action("", new { DeleteId = item.MasterWorkingHoursId })" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-x-circle text-danger fs-4"></i> </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
+<script>
+    var path="";
+
+
+     $(function(){
+         $(".csDelete").on("click",function(){
+             path=$(this).data("urls");
+         })
+      });
+
+      function ConfirmDelete()
+      {
+          window.location=path;
+          Cancelpath();
+      }
+
+     function Cancelpath()
+      {
+          path="";
+      }
+</script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure to Delete this row?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="Cancelpath()">Close</button>
+                <button type="button" class="btn btn-danger" onclick="ConfirmDelete()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

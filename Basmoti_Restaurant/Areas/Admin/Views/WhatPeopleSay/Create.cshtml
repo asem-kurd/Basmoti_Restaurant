@@ -1,0 +1,41 @@
+﻿@using Basmoti_Restaurant.Areas.Admin.ViewModels
+@model MasterWhatPeopleSayModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>MasterWhatPeopleSay</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MasterWhatPeopleSayName" class="control-label"></label>
+                <input asp-for="MasterWhatPeopleSayName" class="form-control" />
+                <span asp-validation-for="MasterWhatPeopleSayName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MasterWhatPeopleSayText" class="control-label"></label>
+                <input asp-for="MasterWhatPeopleSayText" class="form-control" />
+                <span asp-validation-for="MasterWhatPeopleSayText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="File" class="control-label"></label>
+                <input asp-for="File" class="form-control" />
+                <span asp-validation-for="File" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

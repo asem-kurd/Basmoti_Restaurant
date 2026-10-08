@@ -1,0 +1,45 @@
+﻿@model Basmoti_Restaurant.Models.MasterWorkingHours
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>MasterWorkingHours</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MasterWorkingHoursDayName" class="control-label"></label>
+                <input asp-for="MasterWorkingHoursDayName" class="form-control" />
+                <span asp-validation-for="MasterWorkingHoursDayName" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="MasterWorkingHoursIsClosed" /> @Html.DisplayNameFor(model => model.MasterWorkingHoursIsClosed)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="MasterWorkingHoursOpenTime" class="control-label"></label>
+                <input asp-for="MasterWorkingHoursOpenTime" class="form-control" />
+                <span asp-validation-for="MasterWorkingHoursOpenTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MasterWorkingHoursCloseTime" class="control-label"></label>
+                <input asp-for="MasterWorkingHoursCloseTime" class="form-control" />
+                <span asp-validation-for="MasterWorkingHoursCloseTime" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

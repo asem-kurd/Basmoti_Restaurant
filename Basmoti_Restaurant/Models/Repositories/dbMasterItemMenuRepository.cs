@@ -1,7 +1,7 @@
 ﻿
-using Restaurant.Data;
+using Basmoti_Restaurant.Data;
 
-namespace Restaurant.Models.Repositories
+namespace Basmoti_Restaurant.Models.Repositories
 {
     public class dbMasterItemMenuRepository : IRepository<MasterItemMenu>
     {
@@ -60,9 +60,9 @@ namespace Restaurant.Models.Repositories
             data.MasterCategoryMenuId = entity.MasterCategoryMenuId;
 
 
-            entity.UpdateDate = DateTime.Now;
-            entity.UpdateId = "1";
-            db.MasterItemMenus.Update(entity);
+            data.UpdateDate = DateTime.Now;
+            data.UpdateId = "1";
+
             db.SaveChanges();
         }
 

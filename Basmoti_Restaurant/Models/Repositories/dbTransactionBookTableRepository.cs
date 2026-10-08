@@ -1,7 +1,7 @@
 ﻿
-using Restaurant.Data;
+using Basmoti_Restaurant.Data;
 
-namespace Restaurant.Models.Repositories
+namespace Basmoti_Restaurant.Models.Repositories
 {
     public class dbTransactionBookTableRepository : ITransactionRepository<TransactionBookTable>
     {

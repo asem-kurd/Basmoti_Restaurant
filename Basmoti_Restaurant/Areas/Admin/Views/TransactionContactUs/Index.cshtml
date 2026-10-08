@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Basmoti_Restaurant.Models.TransactionContactUs>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionContactUsFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionContactUsEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionContactUsSubject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionContactUsMessage)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionContactUsFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionContactUsEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionContactUsSubject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionContactUsMessage)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

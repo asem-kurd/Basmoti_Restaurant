@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Basmoti_Restaurant.Models.TransactionNewsletter>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionNewsletterEmail)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionNewsletterEmail)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

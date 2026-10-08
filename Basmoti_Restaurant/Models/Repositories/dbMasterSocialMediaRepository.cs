@@ -1,7 +1,7 @@
 ﻿
-using Restaurant.Data;
+using Basmoti_Restaurant.Data;
 
-namespace Restaurant.Models.Repositories
+namespace Basmoti_Restaurant.Models.Repositories
 {
     public class dbMasterSocialMediaRepository : IRepository<MasterSocialMedia>
     {
@@ -53,12 +53,13 @@ namespace Restaurant.Models.Repositories
         {
             var data = Find(Id);
 
+            data.MasterSocialMediaName = entity.MasterSocialMediaName;
             data.MasterSocialMediaImageUrl = entity.MasterSocialMediaImageUrl;
             data.MasterSocialMediaUrl = entity.MasterSocialMediaUrl;
 
             entity.UpdateDate = DateTime.Now;
             entity.UpdateId = "1";
-            db.MasterSocialMedia.Update(entity);
+
             db.SaveChanges();
         }
 

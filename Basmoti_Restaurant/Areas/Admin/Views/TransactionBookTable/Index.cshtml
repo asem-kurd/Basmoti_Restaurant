@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Basmoti_Restaurant.Models.TransactionBookTable>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionBookTableFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionBookTableEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionBookTableMobileNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionBookTableDate)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionBookTableFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionBookTableEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionBookTableMobileNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionBookTableDate)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>

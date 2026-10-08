@@ -1,0 +1,47 @@
+﻿@using Basmoti_Restaurant.Areas.Admin.ViewModels
+@model MasterSliderModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>MasterSlider</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MasterSliderId" />
+            <div class="form-group">
+                <label asp-for="MasterSliderTitle" class="control-label"></label>
+                <input asp-for="MasterSliderTitle" class="form-control" />
+                <span asp-validation-for="MasterSliderTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MasterSliderBreef" class="control-label"></label>
+                <input asp-for="MasterSliderBreef" class="form-control" />
+                <span asp-validation-for="MasterSliderBreef" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MasterSliderDesc" class="control-label"></label>
+                <input asp-for="MasterSliderDesc" class="form-control" />
+                <span asp-validation-for="MasterSliderDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="MasterSliderImageUrl" type="hidden" />
+                <label asp-for="File" class="control-label"></label>
+                <input asp-for="File" class="form-control" />
+                <span asp-validation-for="File" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

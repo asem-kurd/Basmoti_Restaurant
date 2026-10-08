@@ -1,7 +1,7 @@
 ﻿
-using Restaurant.Data;
+using Basmoti_Restaurant.Data;
 
-namespace Restaurant.Models.Repositories
+namespace Basmoti_Restaurant.Models.Repositories
 {
     public class dbMasterWorkingHoursRepository : IRepository<MasterWorkingHours>
     {
@@ -60,7 +60,7 @@ namespace Restaurant.Models.Repositories
 
             entity.UpdateDate = DateTime.Now;
             entity.UpdateId = "1";
-            db.MasterWorkingHours.Update(entity);
+
             db.SaveChanges();
         }
 

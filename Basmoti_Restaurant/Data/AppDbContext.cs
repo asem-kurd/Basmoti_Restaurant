@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Restaurant.Models;
+using Basmoti_Restaurant.Models;
 
-namespace Restaurant.Data
+
+namespace Basmoti_Restaurant.Data
 {
     public class AppDbContext : IdentityDbContext
     {

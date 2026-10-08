@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Restaurant.Models;
+namespace Basmoti_Restaurant.Models;
 
 public partial class MasterWorkingHours : BaseEntity
 {
     [Key]
+    [Display(Name = "Id")]
     public int MasterWorkingHoursId { get; set; }
 
-    public string MasterWorkingHoursDayName { get; set; } = null!;   
 
+    [Display(Name = "Day Name")]
+    public string MasterWorkingHoursDayName { get; set; } = null!;   
+    
+    [Display(Name = "Is Closed")]
     public bool MasterWorkingHoursIsClosed { get; set; }
 
-    public string MasterWorkingHoursOpenTime { get; set; }
-    public string MasterWorkingHoursCloseTime { get; set; }
+    [Display(Name = "Open Time")]
+    public string MasterWorkingHoursOpenTime { get; set; } = null!;
+
+    [Display(Name = "Close Time")]
+    public string MasterWorkingHoursCloseTime { get; set; } = null!;
 }

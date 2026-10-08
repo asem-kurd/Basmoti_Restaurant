@@ -1,4 +1,4 @@
-﻿namespace Restaurant.Models.Repositories
+﻿namespace Basmoti_Restaurant.Models.Repositories
 {
     public interface IRepository<T>
     {

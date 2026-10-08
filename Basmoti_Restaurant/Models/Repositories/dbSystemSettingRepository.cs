@@ -1,7 +1,7 @@
 ﻿
-using Restaurant.Data;
+using Basmoti_Restaurant.Data;
 
-namespace Restaurant.Models.Repositories
+namespace Basmoti_Restaurant.Models.Repositories
 {
     public class dbSystemSettingRepository : IRepository<SystemSetting>
     {
@@ -55,7 +55,7 @@ namespace Restaurant.Models.Repositories
         public void Update(int Id, SystemSetting entity)
         {
             var data = Find(Id);
-            data.SystemSettingLogoImageUrl = entity.SystemSettingLogoImageUrl;
+            data.SystemSettingLogoImageUrl1 = entity.SystemSettingLogoImageUrl1;
             data.SystemSettingLogoImageUrl2 = entity.SystemSettingLogoImageUrl2;
             data.SystemSettingCopyright = entity.SystemSettingCopyright;
             data.SystemSettingWelcomeNoteTitle = entity.SystemSettingWelcomeNoteTitle;
@@ -63,8 +63,6 @@ namespace Restaurant.Models.Repositories
             data.SystemSettingWelcomeNoteDesc = entity.SystemSettingWelcomeNoteDesc;
             data.SystemSettingPhone = entity.SystemSettingPhone;
             data.SystemSettingEmail = entity.SystemSettingEmail;
-            data.SystemSettingSocialMediaIcon = entity.SystemSettingSocialMediaIcon;
-            data.SystemSettingSocialMediaIconUrl = entity.SystemSettingSocialMediaIconUrl;
             data.SystemSettingWelcomeNoteUrl = entity.SystemSettingWelcomeNoteUrl;
             data.SystemSettingWelcomeNoteImageUrl = entity.SystemSettingWelcomeNoteImageUrl;
             data.SystemSettingMapLocation = entity.SystemSettingMapLocation;
@@ -72,9 +70,9 @@ namespace Restaurant.Models.Repositories
 
 
 
-            entity.UpdateDate = DateTime.Now;
-            entity.UpdateId = "1";
-            db.SystemSettings.Update(entity);
+            data.UpdateDate = DateTime.Now;
+            data.UpdateId = "1";
+
             db.SaveChanges();
         }
 

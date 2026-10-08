@@ -1,7 +1,7 @@
 ﻿
-using Restaurant.Data;
+using Basmoti_Restaurant.Data;
 
-namespace Restaurant.Models.Repositories
+namespace Basmoti_Restaurant.Models.Repositories
 {
     public class dbMasterCategoryMenuRepository : IRepository<MasterCategoryMenu>
     {
@@ -27,8 +27,10 @@ namespace Restaurant.Models.Repositories
         {
             entity.CreateId = "1";
             entity.CreateDate = DateTime.Now;
+            entity.UpdateId = "1";
             entity.UpdateDate = DateTime.Now;
             entity.IsActive = true;
+
             db.MasterCategoryMenus.Add(entity);
             db.SaveChanges();
         }
@@ -57,7 +59,7 @@ namespace Restaurant.Models.Repositories
 
             entity.UpdateDate = DateTime.Now;
             entity.UpdateId = "1";
-            db.MasterCategoryMenus.Update(entity);
+
             db.SaveChanges();
         }
 

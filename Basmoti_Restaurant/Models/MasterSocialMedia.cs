@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Restaurant.Models;
+namespace Basmoti_Restaurant.Models;
 
 
 //for footer
@@ -11,9 +11,17 @@ namespace Restaurant.Models;
 public partial class MasterSocialMedia : BaseEntity
 {
     [Key]
+    [Display(Name = "Id")]
     public int MasterSocialMediaId { get; set; }
 
-    public string MasterSocialMediaImageUrl { get; set; } = null!;
+    [Display(Name = "Name")]
+    [Required(ErrorMessage = "Name is Required")]
+    public string MasterSocialMediaName { get; set; } = null!;
 
+    [Display(Name = "Image")]
+    public string? MasterSocialMediaImageUrl { get; set; }
+
+    [Required(ErrorMessage = "URL is Required")]
+    [Display(Name = "URL")]
     public string MasterSocialMediaUrl { get; set; } = null!;
 }

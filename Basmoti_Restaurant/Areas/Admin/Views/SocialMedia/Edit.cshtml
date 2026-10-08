@@ -1,0 +1,43 @@
+﻿@using Basmoti_Restaurant.Areas.Admin.ViewModels
+@model MasterSocialMediaModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>MasterSocialMedia</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MasterSocialMediaId" />
+            <div class="form-group">
+                <label asp-for="MasterSocialMediaName" class="control-label"></label>
+                <input asp-for="MasterSocialMediaName" class="form-control" />
+                <span asp-validation-for="MasterSocialMediaName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MasterSocialMediaUrl" class="control-label"></label>
+                <input asp-for="MasterSocialMediaUrl" class="form-control" />
+                <span asp-validation-for="MasterSocialMediaUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="MasterSocialMediaImageUrl" />
+                <label asp-for="File" class="control-label"></label>
+                <input asp-for="File" class="form-control" />
+                <span asp-validation-for="File" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
